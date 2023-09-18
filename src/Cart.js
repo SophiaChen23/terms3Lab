@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // const parentDirectoryPath = path.join(__dirname, '..'); // '..' represents the parent directory
 
 import "./styles.css";
-function Home() {
+function Cart() {
     const [data, setData] = useState([]);
     const [total, setTotal] = useState(0);
     const [lightboxItem, setLightboxItem] = useState(null);
@@ -66,16 +66,14 @@ function Home() {
                         Shop 2 <FontAwesomeIcon icon={faRegistered} /> eact
                     </a>
                 </h1>
-                <div-right>
-                    <a href="/cart">
-                        <FontAwesomeIcon icon={ faShoppingCart} />
-                    </a>
 
-                    <div>
-                        <p style={{ color: 'white', fontSize:'12px' }}>Total: {total} items</p>
-                    </div>
-                </div-right>
+                <a href="/cart">
+                    <FontAwesomeIcon icon={ faShoppingCart} />
+                </a>
+                <div>
 
+                    <p style={{ color: 'white', fontSize:'12px' }}>Total: {total} items</p>
+                </div>
 
             </div>
 
@@ -110,32 +108,19 @@ function Home() {
                             )}
 
 
-                            <div className= "inOrder">
-                                <button className = "button_design" onClick={() => addValue(item.id)}>
-                                    <FontAwesomeIcon icon={faCirclePlus} />
 
-                                </button>
-                                <button className = "button_design" onClick={() => minusValue(item.id)}>
-                                    <FontAwesomeIcon icon={faCircleMinus } />
-
-                                </button>
-
-
-                                <div className="value-box">
-                                    <span className="value-label">Quantity:</span>
-                                    <span className="value-square">{item.value}</span>
-                                </div>
+                            <p> you are a asshole</p>
+                            <div className="value-box">
+                                <span className="value-label">Quantity:</span>
+                                <span className="value-square">{item.value}</span>
                             </div>
-
                         </div>
 
-                        <div className="element-with-light-line"></div>
                     </li>
-
                 ))}
             </ul>
         </div>
     );
 }
 
-export default Home;
+export default Cart;
