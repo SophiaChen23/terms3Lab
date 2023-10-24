@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import BarChart from "./animated-bar/src/helper";
+import Trees from './collapsible-tree/src/trees';
+import Example1 from './react-vertex/src/sphere';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/animated-bar">Animated Bar</Link>
+              </li>
+              <li>
+                <Link to="/collapsible-tree">Collapsible Tree</Link>
+              </li>
+              <li>
+                <Link to="/react-vertex">React Vertex</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <Route path="/animated-bar" component={BarChart} />
+          <Route path="/collapsible-tree" component={Trees} />
+          <Route path="/react-vertex" component={Example1} />
+        </div>
+      </Router>
   );
 }
 
